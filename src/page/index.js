@@ -1,4 +1,6 @@
-export { default as Dashboard } from './Dashboard'
-export { default as Error } from './Error'
-export { default as Landing } from './Landing'
-export { default as Register } from './Register'
+import Dashboard from './Dashboard'
+import Error from './Error'
+import Landing from './Landing'
+import Register from './Register'
+
+export { Dashboard, Error, Landing, Register }
