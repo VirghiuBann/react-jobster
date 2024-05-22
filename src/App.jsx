@@ -1,4 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+
 import { Landing, Error, Register, Dashboard } from './page'
 
 const router = createBrowserRouter([
@@ -24,6 +26,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <ToastContainer />
     </>
   )
 }
