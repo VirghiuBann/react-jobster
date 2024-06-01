@@ -1,13 +1,17 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 
-import { Landing, Error, Register } from './page'
+import { Landing, Error, Register, ProtectedRoute } from './page'
 import { AddJob, AllJobs, Profile, SharedLayout, Stats } from './page/dashboard'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <SharedLayout />,
+    element: (
+      <ProtectedRoute>
+        <SharedLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         index: true,
