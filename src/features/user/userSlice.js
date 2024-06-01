@@ -35,7 +35,7 @@ export const loginUser = createAsyncThunk(
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducer: {
+  reducers: {
     toggleSidebar: (state) => {
       state.isSidebarOpen = !state.isSidebarOpen
     },
@@ -90,6 +90,6 @@ const userSlice = createSlice({
   },
 })
 
-export const { toggleSidebar } = userSlice.reducer
+export const { toggleSidebar } = userSlice.actions
 
 export default userSlice.reducer
