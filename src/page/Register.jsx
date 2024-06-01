@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 
 import { Logo, FormRow } from '../components'
 import Wrapper from '../assets/wrappers/RegisterPage'
+import { loginUser, registerUser } from '../features/user/userSlice'
 
 const initialState = {
   name: '',
@@ -14,8 +15,8 @@ const initialState = {
 
 const Register = () => {
   const dispatch = useDispatch()
+  const { isLoading, user } = useSelector((store) => store.user)
   const [values, setValues] = useState(initialState)
-  const { loginUser, registerUser } = useSelector((store) => store.user)
 
   const handleChange = (e) => {
     const name = e.target.name
