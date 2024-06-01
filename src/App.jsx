@@ -1,12 +1,31 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 
-import { Landing, Error, Register, Dashboard } from './page'
+import { Landing, Error, Register } from './page'
+import { AddJob, AllJobs, Profile, SharedLayout, Stats } from './page/dashboard'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Dashboard />,
+    element: <SharedLayout />,
+    children: [
+      {
+        index: true,
+        element: <Stats />,
+      },
+      {
+        path: '/all-jobs',
+        element: <AllJobs />,
+      },
+      {
+        path: '/add-job',
+        element: <AddJob />,
+      },
+      {
+        path: '/profile',
+        element: <Profile />,
+      },
+    ],
   },
   {
     path: '/landing',
