@@ -19,6 +19,7 @@ export const registerUser = createAsyncThunk(
       const resp = await customFetch.post('/auth/testingRegister', user)
 
       console.log(resp)
+      return resp.data
     } catch (error) {
       console.log(error.response)
     }
